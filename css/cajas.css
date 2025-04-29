@@ -1,0 +1,124 @@
+
+/*  Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    vertical-align: top;
+    width: 95%;
+}
+
+/* Barra lateral izquierda */
+aside {
+    width: 6%;
+    float: left; /* Fija la barra a la izquierda */
+    height: 100vh; /* Ocupa el alto completo de la ventana */
+    background-color: whitesmoke; 
+    box-shadow: 0px 0px -2px -2px gray;
+    padding: 1em 0;
+}
+
+/* 🔹 Contenedor principal */
+main {
+    width: 93%;
+    float: right; /* Permite que esté al lado de <aside> */
+}
+
+/* 🔹 Header con búsqueda y perfil */
+header {
+    padding: 15px;        
+    text-align: right;
+}
+
+  input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #eee;
+      width: 89%;
+  }
+
+  header>img {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-bottom: -10px;
+    margin-left: 20px;
+    border: #333 1px solid;
+
+  }
+
+/* 🔹 Menú de navegación */
+nav {
+    margin-left: 10px;        
+    padding: 10px 0px;
+    text-align: left;
+    line-height: 1.5em;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 0.8em;
+    padding: 1px 10px;
+    border-radius: 3px;
+}
+
+nav a.activo {
+  border-bottom: #333 2px solid;
+}
+
+nav a:hover {
+  background-color: #eee;
+}
+
+.contenedor {
+    padding-left: 10px;
+    width: 100%;
+    position: relative; /* Permite ajustes sin afectar la estructura */
+}
+
+.columna {
+    display: inline-block;
+    width: 30%; /* Simulación de las columnas */
+    margin: 0 1%;
+    vertical-align: top;
+}
+
+/* Tarjetas de imágenes */
+.caja {
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: lightblue;
+    padding: 10px;
+    position: relative;
+}
+
+.caja img {
+    width: 100%;
+    height: auto;
+    display: block; /* Elimina espacios innecesarios */
+    border-radius: 10px;
+}
+
+/* Solución para problemas con float */
+/* .contenedor::after {
+    content: "";
+    display: block;
+    clear: both;
+} */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+ul>li>img {
+  width: 1.3em;
+  height: auto;
+  margin-bottom: 1.5em;
+}
