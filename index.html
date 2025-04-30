@@ -1,59 +1,133 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GRIDnterest</title>
-  <link rel="stylesheet" href="./css/cajas.css">
+  <title>Position</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      min-height: 100vh;
+      color: #555;
+    }
+    .position {
+      width: 150px;
+      height: 150px;
+      display: block;
+      color: white;
+      font-size: 1.2em;
+      text-align: center;
+      margin: 0 !important;
+    }
+    #container {
+      margin: 30px auto;
+      border: 4px solid black;
+      width: 400px;
+      height: 400px;
+      display: block;
+      background-color: aliceblue;
+      position: relative;      
+    }
+    #static {     
+      background-color: gainsboro;
+      position: static;
+    }
+    #relative {
+      background-color: yellowgreen;
+      position: relative;
+      left: -150px;
+    }
+    #relativo {
+      background-color: yellowgreen;
+      position: absolute;
+      top:0;
+      transform: scaleX(-1);
+      opacity: 0.2;
+    }
+    #absolute {
+      background-color: deeppink;
+      position: absolute;
+      top:0;
+      right: 0;
+    }
+    #fixed {
+      position: fixed;
+      background-color: rgba(25, 25, 112, 0.5);     
+      top: 40%;
+      right: 0; 
+    }
+
+    #absoluto {
+      width: 55%;
+      font-size: 0.9em;
+      text-align: center;
+      color:black;
+      background-color: rgba(255,255,255,1);
+      border: 0.5px dotted black;
+      position: absolute;
+      top: -20px;
+      left: 12px;
+      z-index: 1;
+    }
+    h1 {
+      text-align: center;
+    }
+    section {
+      width: 95%;
+      margin: 0 auto;
+    }
+    code {
+      color: black;
+      font-size: 1.1em;
+      font-weight: 600;
+    }
+    b {
+      color: red;
+    }
+    .cap {
+      font-variant: small-caps;
+      font-weight: bold;
+      text-decoration:underline;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    li > p {
+      margin: 0 5px;
+    }
+    section>p:first-child::first-line {
+      font-size: 1.25em;
+      color: blue;
+    }
+  </style>
 </head>
-  <body>
-    <aside>      
-      <ul>
-        <li title="Inicio"><img src="./img/pinterest.png" alt="Inicio"></li>
-        <li title="Inicio"><img src="./img/home.svg" alt="Inicio"></li>
-        <li title="Explorar"><img src="./img/explore.svg" alt="Explorar"></li>
-        <li title="Crear"><img src="./img/add.svg" alt="Crear"></li>
-        <li title="Actualizaciones"><img src="./img/notifications.svg" alt="Actualizaciones"></li>
-        <li title="Mensajes"><img src="./img/bubble.svg" alt="Mensajes"></li>
-        <li><br></li>
-        <li title="Más opciones"><img src="./img/settings.svg" alt="Opciones"></li>
-      </ul>
-    </aside>
-    
-    <main>
-      <header>
-        <input type="text" placeholder="&#x2315; Buscar...">
-        <img title="Tu perfil" src="./img/avatar.png" alt="Perfil">
-      </header>
-  
-      <nav>
-          <a class="activo" href="#"> Todos </a>
-          <a href="#"> HTML </a>
-          <a href="#"> CSS </a>
-          <a href="#"> JavaScript </a>
-      </nav>
-  
-      <div class="contenedor">
-        <div class="columna"> <!-- HTML -->
-          <div class="caja"><img src="./img/html1.jpg" alt="HTML Semántico"></div>
-          <div class="caja"><img src="./img/html2.jpg" alt="Inputs"></div>
-          <div class="caja"><img src="./img/html3.jpg" alt="CheatSheets"></div>
-          <div class="caja"><img src="./img/html4.png" alt="Estructura"></div>
-          <div class="caja"><img src="./img/html5.jpg" alt="Formularios"></div>   
-        </div>
-        <div class="columna"> <!-- css -->
-          <div class="caja"><img src="./img/css1.jpg" alt="CheatSheet"></div>
-          <div class="caja"><img src="./img/css7.jpg" alt="box model"></div>
-          <div class="caja"><img src="./img/html6.jpg" alt="padding"></div>
-          <div class="caja"><img src="./img/css2.jpg" alt="CheatSheet"></div>
-          <div class="caja"><img src="./img/css-display.jpg" alt="css-display"></div>
-          <div class="caja"><img src="./img/css-flex.jpg" alt="css-flex"></div>
-          <div class="caja"><img src="./img/css-flexbox.jpg" alt="css-flexbox"></div>
-        </div>
-        <div class="columna"> <!-- js -->
-          <div class="caja"><img src="./img/js-arrays.jpg" alt="Arrays JS"></div>
-        </div>
-      </div>
-    </main>
-  </body>
+<body>
+  <h1>Valores de la propiedad <code>position</code></h1>
+  <div id="container">
+    <div id="absoluto">
+      <span>soy <code>container</code>, el padre.</span>
+    </div>
+    <div class="position" id="relative"><span>relative</span></div>
+    <div class="position" id="relativo">
+        <span>relative ➜</span>
+    </div>
+    <div class="position" id="absolute"><span>absolute</span></div>
+    <div class="position" id="fixed"><span>fixed</span></div>
+    <div class="position" id="static"><span>static</span></div>
+  </div>
+  <section>
+    <p><code>Position: static;</code> es el valor por defecto del HTML.<br>
+      Los otros cuatro valores de position <b>desbloquean</b> 4 propiedades denominadas <b>propiedades de desplazamiento</b> que son: <code>top</code>, <code>bottom</code>, <code>left</code>, y <code>right</code> además de la propiedad <code>z-index</code> que veremos en una próxima práctica.</p><p>Estas cinco propiedades <mark>⚠️ <span class="cap">no funcionan con el valor</span> <code>static</code></mark>.</p>
+    <ul>
+      <li><p><code><a target="_blank" href="relativas.html">relative</a>:</code> Se desplaza en referencia a la posición que le tocaría o posición original respecto del flujo del documento.<br>A diferencia de <code>margin-top</code>, <code>top</code> desplaza el elemento sin desplazar el elemento siguiente.</p>
+      <p><code>margin: auto;</code> no centra un elemento si está posicionado de forma relativa.</p></li>
+      <li><p><code><a target="_blank" href="absolute.html">absolute</a></code> Saca al elemento del flujo, posicionandose, no en relación a su padre si no en relación al ascendiente más cercano con position diferente de <code>static</code> y si no lo hay, respecto de la pantalla del dispositivo.</p>
+      <p>Si se utiliza con <code>position: absolute;</code> , <code>margin: auto;</code> se puede utilizar para centrar un elemento horizontal y verticalmente, combinando <code>top: 0, right: 0, bottom: 0, left: 0</code> con <code>margin: auto</code>. </li>
+      <li><p><code>fixed:</code> Saca totalmente al elemento del flujo, posicionandose, directamente en relación a la pantalla del dispositivo.</p></li>
+      <li><p><code>sticky:</code> Es un híbrido entre <code>relative</code> y <code>fixed</code>. El elemento se comporta como un relative hasta que la posición top coincida con el borde superior de la pantalla, en ese momento, se convierte en fixed.</p></li>
+    </ul>
+    <p><a href="https://youtu.be/s4CWBdPLDtw?si=RD8Q2l3h7ptooRkt" target="_blank" rel="noopener">video</a>.</p>
+  </section>
+
+</body>
 </html>
