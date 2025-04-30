@@ -1,1 +1,1 @@
-# relativas
+# posicionamiento tradicional css
