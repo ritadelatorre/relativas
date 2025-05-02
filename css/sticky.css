@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Short+Stack&display=swap');
+
+body {
+  width: 92%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  color: #555;
+  text-align: justify;
+}
+
+nav {
+  border-bottom: 1px solid gainsboro;
+  padding: 0 5%;
+
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  
+  position: sticky;
+  top:0;
+  left:0;
+  z-index: 1;
+
+  text-align: center;
+  font-size: 0.8em; 
+
+}
+
+
+.link {
+  margin: 2px 1em;
+  color: #555;
+  text-decoration: underline;
+  text-decoration-color: pink;
+  text-decoration-thickness: 3px;  
+  text-underline-offset: -20px; 
+  /* Ajusta la distancia entre el texto y el subrayado */
+}
+
+.link:hover {
+  text-decoration-color: gainsboro;
+  color: #F56FA1;
+}
+
+.link[href^="mailto"]:hover::after {
+  content: '✉';
+}
+
+#banner {
+    margin-top: 30px;
+    width: 100%;
+    min-height: 560px;
+    background-image: url('../img/purrrrfect.avif');
+    background-color: white;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main {
+  background: radial-gradient(circle at left top, rgba(255,192,203,0.1), white 50%, rgba(255,192,203,0.1));
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: pink;
+  font-weight: 300;
+}
+
+p::first-letter {
+  font-family: 'Pacifico', cursive;
+  color: black;
+  text-shadow: 1px 1px 1px rgba(255, 192, 203, 0.7); 
+}
